@@ -1,0 +1,12 @@
+{
+    "AWSEBDockerrunVersion": "1",
+    "Image": {
+      "Name": "072061963333.dkr.ecr.us-east-1.amazonaws.com/justin-resp:latest"
+    },
+    "Ports": [
+      {
+        "ContainerPort": 80,
+        "HostPort": 80
+      }
+    ]
+  }
