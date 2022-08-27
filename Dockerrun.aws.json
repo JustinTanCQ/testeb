@@ -1,12 +1,38 @@
 {
-    "AWSEBDockerrunVersion": "2",
-    "Image": {
-      "Name": "072061963333.dkr.ecr.us-east-1.amazonaws.com/justin-resp:latest"
-    },
-    "Ports": [
+    "AWSEBDockerrunVersion": 2,
+    "volumes": [
       {
-        "ContainerPort": 80,
-        "HostPort": 80
+        "name": "web-app",
+        "host": {
+          "sourcePath": "/usr/share/nginx/html"
+        }
+      }
+    ],
+    "containerDefinitions": [
+      {
+        "name": "web-app",
+        "image": "072061963333.dkr.ecr.us-east-1.amazonaws.com/justin-resp:latest",
+        "environment": [
+          {
+            "name": "Container",
+            "value": "nodejs"
+          }
+        ],
+        "essential": true,
+        "memory": 128,
+        "portMappings": [
+            {
+              "hostPort": 80,
+              "containerPort": 80
+            }
+          ],
+        "mountPoints": [
+          {
+            "sourceVolume": "web-app",
+            "containerPath": "/usr/share/nginx/html",
+            "readOnly": true
+          }
+        ]
       }
     ]
   }
