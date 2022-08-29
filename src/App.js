@@ -20,7 +20,7 @@ class App extends Component {
     };
 
     analyzeSentence() {
-        fetch('http://localhost:8080/sentiment', {
+        fetch('http://java-env.us-east-1.elasticbeanstalk.com/sentiment', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

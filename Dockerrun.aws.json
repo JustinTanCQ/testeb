@@ -3,7 +3,7 @@
     "containerDefinitions": [
       {
         "name": "web-app",
-        "image": "072061963333.dkr.ecr.us-east-1.amazonaws.com/justin-resp:latest",
+        "image": "072061963333.dkr.ecr.us-east-1.amazonaws.com/justin-sentiment-nodejs:latest",
         "environment": [
           {
             "name": "Container",

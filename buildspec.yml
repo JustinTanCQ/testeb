@@ -11,10 +11,10 @@ phases:
       - echo Build started on `date`
       - echo Building the Docker image...    
       - yarn build
-      - docker build -t justin-resp .
-      - docker tag justin-resp:latest 072061963333.dkr.ecr.us-east-1.amazonaws.com/justin-resp:latest
+      - docker build -t justin-sentiment-nodejs .
+      - docker tag justin-sentiment-nodejs:latest 072061963333.dkr.ecr.us-east-1.amazonaws.com/justin-sentiment-nodejs:latest
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker push 072061963333.dkr.ecr.us-east-1.amazonaws.com/justin-resp:latest
+      - docker push 072061963333.dkr.ecr.us-east-1.amazonaws.com/justin-sentiment-nodejs:latest
